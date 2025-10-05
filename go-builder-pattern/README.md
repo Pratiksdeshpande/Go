@@ -3,13 +3,12 @@
 ## 📑 Table of Contents
 
 - [🤔 What is the Builder Pattern?](#-what-is-the-builder-pattern)
-- [🧩 Structure (Conceptual Components)](#-structure-conceptual-components)
 - [✅ When to Use the Builder Pattern?](#-when-to-use-the-builder-pattern)
 - [❌ When NOT to Use the Builder Pattern?](#-when-not-to-use-the-builder-pattern)
-- [🔧 Telescoping Constructor Problem](#-how-does-the-builder-pattern-solve-the-telescoping-constructor-problem)
+- [🔧 How does the Builder pattern solve the telescoping constructor problem?](#-how-does-the-builder-pattern-solve-the-telescoping-constructor-problem)
 - [🚀 Builder vs Functional Options](#-in-go-we-often-use-functional-options-for-optional-parameters-why-might-you-choose-builder-instead)
-- [🎭 Director Pattern](#-what-is-the-role-of-the-director-in-the-builder-pattern-do-we-always-need-it-in-go)
-- [🔒 Thread Safety](#-how-to-make-a-builder-thread-safe-in-go-should-you)
+- [🎭 Role of the Director in the Builder pattern?](#-role-of-the-director-in-the-builder-pattern)
+- [🔒 How to make a builder thread-safe in Go? Should you?](#-how-to-make-a-builder-thread-safe-in-go-should-you)
 - [💻 Implementation Examples](#-implementation-examples)
 - [🚀 Quick Start](#-quick-start)
 - [📚 Further Reading](#-further-reading)
@@ -43,7 +42,6 @@ Use Builder when one or more of the following are true:
 - If you only have a couple of optional parameters, functional options are usually simpler and more idiomatic in Go
 - If the object is small and construction is trivial — Builder adds unnecessary complexity
 - If you only need immutability/defaults and no multi-step construction — use simple constructors or functional options
-
 
 ## 🔧 How does the Builder pattern solve the telescoping constructor problem?
 
@@ -110,7 +108,7 @@ Both solve the telescoping constructor problem, but they shine in different cont
 - **Flexibility** — You can easily pass options around (they're just functions)
 - **Stateless** — Options don't require holding intermediate state like a builder does
 
-## 🎭 What is the role of the Director in the Builder pattern? Do we always need it in Go?
+## 🎭 Role of the Director in the Builder pattern?
 
 A Director encapsulates and orchestrates the sequence of builder calls to construct specific, pre-defined variants (recipes) of the product — *it tells the builder how to assemble a particular configuration so callers don't repeat the assembly steps*.
 
